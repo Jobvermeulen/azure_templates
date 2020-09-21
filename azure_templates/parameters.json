@@ -12,10 +12,10 @@
             "value": "West Europe"
         },
         "hostingPlanName": {
-            "value": "ASP-treeadaptatoin-8c1f"
+            "value": "ASP-tree-adaptation-8c1f"
         },
         "serverFarmResourceGroup": {
-            "value": "tree_adaptatoin"
+            "value": "tree-adaptation"
         },
         "alwaysOn": {
             "value": false

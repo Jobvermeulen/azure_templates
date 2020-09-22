@@ -6,16 +6,16 @@
             "value": "aa83ded7-9034-4d38-9ddf-f32384b330df"
         },
         "name": {
-            "value": "jokegenerator"
+            "value": "jg616184"
         },
         "location": {
             "value": "West Europe"
         },
         "hostingPlanName": {
-            "value": "ASP-jokeGenerator-a4cc"
+            "value": "ASP-jg616184-a4cc"
         },
         "serverFarmResourceGroup": {
-            "value": "jokeGenerator"
+            "value": "jg616184"
         },
         "alwaysOn": {
             "value": false

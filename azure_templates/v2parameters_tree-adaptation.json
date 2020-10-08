@@ -6,22 +6,22 @@
             "value": "aa83ded7-9034-4d38-9ddf-f32384b330df"
         },
         "name": {
-            "value": "tree-adaptation"
+            "value": "testing"
         },
         "location": {
             "value": "West Europe"
         },
         "hostingPlanName": {
-            "value": "ASP-treeadaptatoin-8c1f"
+            "value": "ASP-testing-8c1f"
         },
         "serverFarmResourceGroup": {
-            "value": "tree_adaptatoin"
+            "value": "testing"
         },
         "alwaysOn": {
             "value": false
         },
         "storageAccountName": {
-            "value": "treeadaptationstorage"
+            "value": "testingstorage"
         },
         "sku": {
             "value": "Dynamic"

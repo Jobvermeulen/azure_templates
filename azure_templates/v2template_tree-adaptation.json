@@ -48,7 +48,7 @@
             "location": "[parameters('location')]",
             "tags": {},
             "dependsOn": [
-                "microsoft.insights/components/testing",
+                "microsoft.insights/components/testingaabbcc123",
                 "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]"
             ],
@@ -66,11 +66,11 @@
                         },
                         {
                             "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
-                            "value": "[reference('microsoft.insights/components/testing', '2015-05-01').InstrumentationKey]"
+                            "value": "[reference('microsoft.insights/components/testingaabbcc123', '2015-05-01').InstrumentationKey]"
                         },
                         {
                             "name": "APPLICATIONINSIGHTS_CONNECTION_STRING",
-                            "value": "[reference('microsoft.insights/components/testing', '2015-05-01').ConnectionString]"
+                            "value": "[reference('microsoft.insights/components/testingaabbcc123', '2015-05-01').ConnectionString]"
                         },
                         {
                             "name": "AzureWebJobsStorage",
@@ -111,7 +111,7 @@
         },
         {
             "apiVersion": "2015-05-01",
-            "name": "testing",
+            "name": "testingaabbcc123",
             "type": "microsoft.insights/components",
             "location": "westeurope",
             "tags": {},

@@ -6,7 +6,7 @@
             "value": "aa83ded7-9034-4d38-9ddf-f32384b330df"
         },
         "name": {
-            "value": "testing"
+            "value": "testingaabbcc123"
         },
         "location": {
             "value": "West Europe"
@@ -15,7 +15,7 @@
             "value": "ASP-testing-8c1f"
         },
         "serverFarmResourceGroup": {
-            "value": "testing"
+            "value": "testingaabbcc123"
         },
         "alwaysOn": {
             "value": false

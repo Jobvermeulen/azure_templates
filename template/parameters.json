@@ -17,6 +17,12 @@
         "name": {
             "value": "testing12345555"
         },
+        "cosmosName": {
+            "value": "cosmosName"
+        },
+        "storageName": {
+            "value": "storageName"
+        },
         "location": {
             "value": "West Europe"
         },
@@ -28,9 +34,6 @@
         },
         "alwaysOn": {
             "value": false
-        },
-        "storageAccountName": {
-            "value": "testingstorageaabbcc123"
         },
         "sku": {
             "value": "Dynamic"

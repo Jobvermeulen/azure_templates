@@ -351,8 +351,8 @@
                         "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('name')), '2014-04-01').InstrumentationKey]",
                         "SqlConnectionString": "[concat('Server=tcp:', parameters('serverName'), '.database.windows.net,1433;Initial Catalog=', parameters('databaseName'), ';Persist Security Info=False;User ID=', parameters('AdministratorLogin'), ';Password=', parameters('AdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
                         "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
-                        "CosmosEndpoint": "[concat('https://', parameters('cosmosName'), '.documents.azure.com:443/')]",
-                        "CosmosDbName": "[parameters('cosmosDbName')]",
+                        "CosmosEndpoint": "[concat('https://', parameters('cosmosDbName'), '.documents.azure.com:443/')]",
+                        "CosmosDbName": "[parameters('cosmosName')]",
                         "Environment": "Production"
                     }
                 },

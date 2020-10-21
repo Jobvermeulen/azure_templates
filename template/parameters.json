@@ -20,6 +20,9 @@
         "cosmosName": {
             "value": "cosmosName"
         },
+        "cosmosDbName": {
+            "value": "cosmosDbName"
+        },
         "storageName": {
             "value": "storageName"
         },

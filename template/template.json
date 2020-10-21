@@ -17,6 +17,9 @@
         "cosmosDbName": {
             "type": "string"
         },
+        "comoslocation": {
+            "type": "string"
+        },
         "location": {
             "type": "string"
         },
@@ -752,12 +755,12 @@
             "kind": "GlobalDocumentDB",
             "type": "Microsoft.DocumentDb/databaseAccounts",
             "name": "[parameters('cosmosName')]",
-            "location": "[parameters('location')]",
+            "location": "[parameters('comoslocation')]",
             "properties": {
                 "databaseAccountOfferType": "Standard",
                 "locations": [
                     {
-                        "id": "[concat(parameters('cosmosName'), '-', parameters('location'))]",
+                        "id": "[concat(parameters('cosmosName'), '-', parameters('comoslocation'))]",
                         "failoverPriority": 0,
                         "locationName": "[parameters('locationName')]"
                     }
@@ -769,9 +772,30 @@
                         "backupRetentionIntervalInHours": 8
                     }
                 },
+                "cors": [
+                    {
+                        "allowedOrigins": "[concat('https://', parameters('name'), '.azurewebsite.net, https://', parameters('name'), '-', parameters('slotName'), '.azurewebsite.net')]"
+                    }
+                ],
                 "isVirtualNetworkFilterEnabled": false,
                 "virtualNetworkRules": [],
-                "ipRules": [],
+                "ipRules": [
+                    {
+                        "ipAddressOrRange": "178.85.21.202"
+                    },
+                    {
+                        "ipAddressOrRange": "178.84.135.218"
+                    },
+                    {
+                        "ipAddressOrRange": "178.85.111.158"
+                    },
+                    {
+                        "ipAddressOrRange": "83.81.72.97"
+                    },
+                    {
+                        "ipAddressOrRange": "0.0.0.0"
+                    }
+                ],
                 "dependsOn": [],
                 "enableMultipleWriteLocations": false,
                 "capabilities": [],

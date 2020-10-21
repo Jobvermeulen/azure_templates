@@ -18,7 +18,7 @@
             "value": "cosmosDbName"
         },
         "storageName": {
-            "value": "storageName"
+            "value": "treeadoptationstorage"
         },
         "location": {
             "value": "West Europe"

@@ -346,7 +346,7 @@
                         "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('name')), '8be4')]",
                         "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
                         "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('name')), '2014-04-01').InstrumentationKey]",
-                        "SqlConnectionString": "[concat('Server=tcp:', parameters('ServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('DatabaseName'), ';Persist Security Info=False;User ID=', parameters('AdministratorLogin'), ';Password=', parameters('AdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
+                        "SqlConnectionString": "[concat('Server=tcp:', parameters('serverName'), '.database.windows.net,1433;Initial Catalog=', parameters('databaseName'), ';Persist Security Info=False;User ID=', parameters('AdministratorLogin'), ';Password=', parameters('AdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
                         "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
                         "CosmosEndpoint": "[concat('https://', parameters('cosmosName'), '.documents.azure.com:443/')]",
                         "CosmosDbName": "[parameters('cosmosDbName')]",
@@ -383,7 +383,7 @@
                                 "WEBSITE_CONTENTSHARE": "[concat(toLower(parameters('name')), 'testing')]",
                                 "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
                                 "APPINSIGHTS_INSTRUMENTATIONKEY": "[reference(resourceId('Microsoft.Insights/components', parameters('name')), '2014-04-01').InstrumentationKey]",
-                                "SqlConnectionString": "[concat('Server=tcp:', parameters('ServerName'), '.database.windows.net,1433;Initial Catalog=', parameters('DatabaseName'), ';Persist Security Info=False;User ID=', parameters('AdministratorLogin'), ';Password=', parameters('AdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
+                                "SqlConnectionString": "[concat('Server=tcp:', parameters('serverName'), '.database.windows.net,1433;Initial Catalog=', parameters('databaseName'), ';Persist Security Info=False;User ID=', parameters('AdministratorLogin'), ';Password=', parameters('AdministratorLoginPassword'), ';MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;')]",
                                 "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
                                 "CosmosEndpoint": "[concat('https://', parameters('cosmosName'), '.documents.azure.com:443/')]",
                                 "Environment": "Testing"

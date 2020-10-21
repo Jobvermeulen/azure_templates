@@ -271,7 +271,7 @@
             "location": "[parameters('location')]",
             "tags": {},
             "dependsOn": [
-                "microsoft.insights/components/testing12345555",
+                "[concat('microsoft.insights/components/', parameters('name'))]",
                 "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
                 "[concat('Microsoft.Storage/storageAccounts/', parameters('storageName'))]"
             ],
@@ -426,7 +426,7 @@
         },
         {
             "apiVersion": "2015-05-01",
-            "name": "testing12345555",
+            "name": "[parameters('name')]",
             "type": "microsoft.insights/components",
             "location": "westeurope",
             "tags": {},

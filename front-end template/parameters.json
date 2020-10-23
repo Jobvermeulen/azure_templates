@@ -5,8 +5,11 @@
         "subscriptionId": {
             "value": "aa83ded7-9034-4d38-9ddf-f32384b330df"
         },
+        "api_url_client": {
+            "value": "tree.adoption.azurewebsites.net/api"
+        },
         "name": {
-            "value": "tree-adaption-cms"
+            "value": "tree-adoption-cms"
         },
         "location": {
             "value": "West Europe"
@@ -15,7 +18,7 @@
             "value": "ASP-treeAdoption-84fd"
         },
         "serverFarmResourceGroup": {
-            "value": "tree-adoptiion-cms"
+            "value": "tree-adoption-cms"
         },
         "alwaysOn": {
             "value": false
@@ -43,9 +46,6 @@
         },
         "nodeVersion": {
             "value": "12.13.0"
-        },
-        "api_url_client": {
-            "value": "tree.adoption.azurewebsites.net/api"
-        }
+        }    
     }
 }

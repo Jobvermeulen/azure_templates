@@ -2,11 +2,11 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "subscriptionId": {
-            "value": "aa83ded7-9034-4d38-9ddf-f32384b330df"
-        },
         "api_url_client": {
             "value": "tree.adoption.azurewebsites.net/api"
+        },
+        "subscriptionId": {
+            "value": "aa83ded7-9034-4d38-9ddf-f32384b330df"
         },
         "name": {
             "value": "tree-adoption-cms"
@@ -15,7 +15,7 @@
             "value": "West Europe"
         },
         "hostingPlanName": {
-            "value": "ASP-treeAdoption-84fd"
+            "value": "ASP-treeadoptioncms-8970"
         },
         "serverFarmResourceGroup": {
             "value": "tree-adoption-cms"
@@ -46,6 +46,6 @@
         },
         "nodeVersion": {
             "value": "12.13.0"
-        }    
+        }
     }
 }

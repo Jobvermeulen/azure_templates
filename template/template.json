@@ -333,6 +333,10 @@
                         {
                             "name": "COSMOS_CONNECTION_STRING",
                             "value": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]"
+                        },
+                        {
+                            "name": "COSMOS_DATABASE_DATABASEID",
+                            "value": "[parameters('cosmosDbName')]"
                         }
                     ],
                     "use32BitWorkerProcess": "[parameters('use32BitWorkerProcess')]"
@@ -361,12 +365,13 @@
                         "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
                         "CosmosEndpoint": "[concat('https://', parameters('cosmosDbName'), '.documents.azure.com:443/')]",
                         "CosmosDbName": "[parameters('cosmosName')]",
+                        "COSMOS_DATABASE_DATABASEID": "[parameters('cosmosDbName')]",
                         "Environment": "Production",
                         "SQL_DATABASE_PASSWORD": "[parameters('administratorLoginPassword')]",
                         "SQL_DATABASE_DATABASENAME": "[parameters('databaseName')]",
                         "SQL_DATABASE_USERNAME": "[parameters('administratorLogin')]",
-                        "SQL_DATABASE_SERVERNAME": "[parameters('serverName')]",
-                        "COSMOS_CONNECTION_STRING": "[concat('https://', parameters('cosmosName'), '.documents.azure.com:443/;', 'AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey, ';')]"
+                        "SQL_DATABASE_SERVERNAME": "[concat(parameters('serverName'), '.database.windows.net']",
+                        "COSMOS_CONNECTION_STRING": "[concat('AccountEndpoint=https://', parameters('cosmosName'), '.documents.azure.com:443/;', 'AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey, ';')]"
                     }
                 }
                 

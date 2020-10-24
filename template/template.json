@@ -370,7 +370,7 @@
                         "SQL_DATABASE_PASSWORD": "[parameters('administratorLoginPassword')]",
                         "SQL_DATABASE_DATABASENAME": "[parameters('databaseName')]",
                         "SQL_DATABASE_USERNAME": "[parameters('administratorLogin')]",
-                        "SQL_DATABASE_SERVERNAME": "[concat(parameters('serverName'), '.database.windows.net']",
+                        "SQL_DATABASE_SERVERNAME": "[concat(parameters('serverName'), '.database.windows.net')]",
                         "COSMOS_CONNECTION_STRING": "[concat('AccountEndpoint=https://', parameters('cosmosName'), '.documents.azure.com:443/;', 'AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey, ';')]"
                     }
                 }

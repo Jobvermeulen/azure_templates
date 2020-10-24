@@ -361,7 +361,12 @@
                         "CosmosPrimaryKey": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]",
                         "CosmosEndpoint": "[concat('https://', parameters('cosmosDbName'), '.documents.azure.com:443/')]",
                         "CosmosDbName": "[parameters('cosmosName')]",
-                        "Environment": "Production"
+                        "Environment": "Production",
+                        "SQL_DATABASE_PASSWORD": "parameters('administratorLoginPassword')",
+                        "SQL_DATABASE_DATABASENAME": "parameters('databaseName')",
+                        "SQL_DATABASE_USERNAME": "parameters('administratorLogin')",
+                        "SQL_DATABASE_SERVERNAME": "parameters('serverName')",
+                        "COSMOS_CONNECTION_STRING": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]"
                     }
                 }
                 

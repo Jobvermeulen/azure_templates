@@ -316,19 +316,19 @@
                         },
                         {
                             "name": "SQL_DATABASE_SERVERNAME",
-                            "value": "parameters('serverName')"
+                            "value": "[parameters('serverName')]"
                         },
                         {
                             "name": "SQL_DATABASE_USERNAME",
-                            "value": "parameters('administratorLogin')"
+                            "value": "[parameters('administratorLogin')]"
                         },
                         {
                             "name": "SQL_DATABASE_PASSWORD",
-                            "value": "parameters('administratorLoginPassword')"
+                            "value": "[parameters('administratorLoginPassword')]"
                         },
                         {
                             "name": "SQL_DATABASE_DATABASENAME",
-                            "value": "parameters('databaseName')"
+                            "value": "[parameters('databaseName')]"
                         },
                         {
                             "name": "COSMOS_CONNECTION_STRING",
@@ -362,11 +362,11 @@
                         "CosmosEndpoint": "[concat('https://', parameters('cosmosDbName'), '.documents.azure.com:443/')]",
                         "CosmosDbName": "[parameters('cosmosName')]",
                         "Environment": "Production",
-                        "SQL_DATABASE_PASSWORD": "parameters('administratorLoginPassword')",
-                        "SQL_DATABASE_DATABASENAME": "parameters('databaseName')",
-                        "SQL_DATABASE_USERNAME": "parameters('administratorLogin')",
-                        "SQL_DATABASE_SERVERNAME": "parameters('serverName')",
-                        "COSMOS_CONNECTION_STRING": "[listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey]"
+                        "SQL_DATABASE_PASSWORD": "[parameters('administratorLoginPassword')]",
+                        "SQL_DATABASE_DATABASENAME": "[parameters('databaseName')]",
+                        "SQL_DATABASE_USERNAME": "[parameters('administratorLogin')]",
+                        "SQL_DATABASE_SERVERNAME": "[parameters('serverName')]",
+                        "COSMOS_CONNECTION_STRING": "[concat('https://', parameters('cosmosName'), '.documents.azure.com:443/;', 'AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey, ';')]"
                     }
                 }
                 

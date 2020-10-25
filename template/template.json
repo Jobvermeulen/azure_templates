@@ -1,7 +1,16 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
-    "parameters": {        
+    "parameters": {      
+        "FirebaseCredentials":{
+            "type": "string"
+        },  
+        "MOLLIE_API_KEY":{
+            "type": "string"
+        },  
+        "MOLLIE_WEBHOOK_URL":{
+            "type": "string"
+        },  
         "extensionVersion": {
             "type": "string"
         },
@@ -337,6 +346,18 @@
                         {
                             "name": "COSMOS_DATABASE_DATABASEID",
                             "value": "[parameters('cosmosDbName')]"
+                        },
+                        {
+                            "name": "FirebaseCredentials",
+                            "value": "[parameters('FirebaseCredentials')]"
+                        },
+                        {
+                            "name": "MOLLIE_API_KEY",
+                            "value": "[parameters('MOLLIE_API_KEY')]"
+                        },
+                        {
+                            "name": "MOLLIE_WEBHOOK_URL",
+                            "value": "[concat('https://', parameters('name'), '.azurewebsite.net/api/v1/order/paymentstatus')]"
                         }
                     ],
                     "use32BitWorkerProcess": "[parameters('use32BitWorkerProcess')]"
@@ -371,7 +392,10 @@
                         "SQL_DATABASE_DATABASENAME": "[parameters('databaseName')]",
                         "SQL_DATABASE_USERNAME": "[parameters('administratorLogin')]",
                         "SQL_DATABASE_SERVERNAME": "[concat(parameters('serverName'), '.database.windows.net')]",
-                        "COSMOS_CONNECTION_STRING": "[concat('AccountEndpoint=https://', parameters('cosmosName'), '.documents.azure.com:443/;', 'AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey, ';')]"
+                        "COSMOS_CONNECTION_STRING": "[concat('AccountEndpoint=https://', parameters('cosmosName'), '.documents.azure.com:443/;', 'AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey, ';')]",
+                        "FirebaseCredentials": "[parameters('FirebaseCredentials')]",
+                        "MOLLIE_API_KEY": "[parameters('MOLLIE_API_KEY')]",
+                        "MOLLIE_WEBHOOK_URL": "[concat('https://', parameters('name'), '.azurewebsite.net/api/v1/order/paymentstatus')]"
                     }
                 }
                 

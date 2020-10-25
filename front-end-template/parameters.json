@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "api_url_client": {
-            "value": "tree.adoption.azurewebsites.net/api"
+            "value": "https://tree-adoption.azurewebsites.net/api"
         },
         "subscriptionId": {
             "value": "aa83ded7-9034-4d38-9ddf-f32384b330df"

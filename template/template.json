@@ -363,7 +363,7 @@
                         },
                         {
                             "name": "MOLLIE_WEBHOOK_URL",
-                            "value": "[concat('https://', parameters('name'), '.azurewebsite.net/api/v1/order/paymentstatus')]"
+                            "value": "[concat('https://', parameters('name'), '.azurewebsites.net/api/v1/order/paymentstatus')]"
                         }
                     ],
                     "use32BitWorkerProcess": "[parameters('use32BitWorkerProcess')]"
@@ -401,7 +401,7 @@
                         "COSMOS_CONNECTION_STRING": "[concat('AccountEndpoint=https://', parameters('cosmosName'), '.documents.azure.com:443/;', 'AccountKey=', listKeys(resourceId('Microsoft.DocumentDB/databaseAccounts', parameters('cosmosName')), '2015-11-06').primaryMasterKey, ';')]",
                         "FirebaseCredentials": "[parameters('FirebaseCredentials')]",
                         "MOLLIE_API_KEY": "[parameters('MOLLIE_API_KEY')]",
-                        "MOLLIE_WEBHOOK_URL": "[concat('https://', parameters('name'), '.azurewebsite.net/api/v1/order/paymentstatus')]"
+                        "MOLLIE_WEBHOOK_URL": "[concat('https://', parameters('name'), '.azurewebsites.net/api/v1/order/paymentstatus')]"
                     }
                 }
                 
@@ -791,7 +791,7 @@
                 },
                 "cors": [
                     {
-                        "allowedOrigins": "[concat('https://', parameters('name'), '.azurewebsite.net')]"
+                        "allowedOrigins": "[concat('https://', parameters('name'), '.azurewebsites.net')]"
                     }
                 ],
                 "isVirtualNetworkFilterEnabled": false,

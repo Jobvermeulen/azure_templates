@@ -1,7 +1,13 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.1",
-    "parameters": {      
+    "parameters": {
+        "nameCms": {
+            "type": "string"
+        },   
+        "apiMollieUrl": {
+            "type": "string"
+        },
         "FirebaseCredentials":{
             "type": "string"
         },  
@@ -363,7 +369,7 @@
                     "use32BitWorkerProcess": "[parameters('use32BitWorkerProcess')]"
                 },
                 "serverFarmId": "[concat('/subscriptions/', parameters('subscriptionId'),'/resourcegroups/', parameters('serverFarmResourceGroup'), '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]",
-                "clientAffinityEnabled": true
+                "clientAffinityEnabled": true               
             },
             "resources": [                
                 {
@@ -400,6 +406,24 @@
                 }
                 
             ]
+        },
+        {
+            "type": "Microsoft.Web/sites/config",
+            "apiVersion": "2018-11-01",
+            "name": "[concat(parameters('name'), '/web')]",
+            "location": "West Europe",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('name'))]"
+            ],
+            "properties": {
+                "cors": {
+                    "allowedOrigins": [
+                        "[concat('https://', parameters('nameCms'), '.azurewebsites.net')]",
+                        "[parameters('apiMollieUrl')]"
+                    ],
+                    "supportCredentials": false
+                }
+            }
         },
         {
             "apiVersion": "2018-11-01",
